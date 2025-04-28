@@ -29,6 +29,7 @@ console.table(productosDisponibles)
 productosDisponibles.forEach((producto) => {
   console.log(`Producto disponible: ${producto.nombre}`)
 })
+
 productos.filter((producto) => producto.disponible & producto.precio >= 80).forEach(
   (producto) => { console.log(`Producto mayor a 80: ${producto.nombre}`) }
 )
