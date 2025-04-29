@@ -86,3 +86,72 @@ const procesarTienda = (...productos) => {
 }
 
 procesarTienda(...productos)
+
+console.log('--------Ejercicio Medio-------')
+
+/*
+🛒 Ejercicio propuesto: Carrito de Compras con Descuento y Stock
+Tienes una lista de productos en stock, algunos disponibles y otros no. El usuario selecciona productos por nombre (como si estuviera armando su carrito).
+
+Tu tarea es:
+
+Crear una función procesarCarrito que reciba:
+
+La lista de productos.
+
+Una lista de nombres de productos seleccionados por el usuario.
+
+Con filter y includes, obtén solo los productos que:
+
+Estén disponibles.
+
+Sean parte de la selección del usuario.
+
+A esos productos:
+
+Si el precio es menor a 100, aplica 10% de descuento.
+
+Si el precio es 100 o más, aplica 5% de descuento.
+
+Luego, imprime con forEach el nombre del producto, el precio original y el precio con descuento.
+
+Usa destructuring y map.
+
+Agrega un par de productos extra al final con spread.
+
+*/
+
+const stock = [
+  { nombre: 'Mouse', precio: 50, disponible: true },
+  { nombre: 'Teclado', precio: 120, disponible: true },
+  { nombre: 'Monitor', precio: 300, disponible: false },
+  { nombre: 'USB', precio: 40, disponible: true },
+  { nombre: 'Audífonos', precio: 90, disponible: true }
+]
+
+const extra3 = { nombre: 'Cámara', precio: 80, disponible: true }
+const extra4 = { nombre: 'Impresora', precio: 200, disponible: true }
+
+const seleccionUsuario = ['Mouse', 'USB', 'Monitor', 'Impresora']
+
+const procesarCarrito = (...productos) => {
+  const unirProductos = [...productos, extra3, extra4]
+  const productosSeleccionados = unirProductos.filter(({ disponible, nombre }) =>
+    seleccionUsuario.includes(nombre) && disponible
+  )
+
+  const productosConDescuento = productosSeleccionados.map(({ nombre, precio }) => {
+    const descuento = (precio < 100) ? 0.9 : 0.95
+    return {
+      nombre,
+      precioOriginal: precio,
+      precioConDescuento: +(precio * descuento).toFixed(2)
+    }
+  })
+
+  productosConDescuento.forEach(({ nombre, precioOriginal, precioConDescuento }) => {
+    console.log(`Producto: ${nombre} | Original: ${precioOriginal}| Descuento: ${precioConDescuento}`)
+  })
+}
+
+procesarCarrito(...stock)
