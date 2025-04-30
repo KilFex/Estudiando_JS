@@ -1,0 +1,7 @@
+{
+  "extends": ["standard"],
+  "rules": {
+    "prefer-const": "off",
+    "semi": ["error", "always"]
+  }
+}

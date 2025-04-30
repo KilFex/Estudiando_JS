@@ -21,15 +21,15 @@ const productos = [
   { nombre: 'Gorra', precio: 30, categoria: 'Accesorios', disponible: true },
   { nombre: 'Reloj', precio: 200, categoria: 'Accesorios', disponible: false },
   { nombre: 'Mochila', precio: 90, categoria: 'Accesorios', disponible: true }
-]
+];
 
-const productosDisponibles = productos.filter((producto) => producto.disponible & producto.precio <= 100)
-console.table(productosDisponibles)
+const productosDisponibles = productos.filter((producto) => producto.disponible & producto.precio <= 100);
+console.table(productosDisponibles);
 
 productosDisponibles.forEach((producto) => {
-  console.log(`Producto disponible: ${producto.nombre}`)
-})
+  console.log(`Producto disponible: ${producto.nombre}`);
+});
 
 productos.filter((producto) => producto.disponible & producto.precio >= 80).forEach(
-  (producto) => { console.log(`Producto mayor a 80: ${producto.nombre}`) }
-)
+  (producto) => { console.log(`Producto mayor a 80: ${producto.nombre}`); }
+);

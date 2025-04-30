@@ -24,9 +24,9 @@ const productos = [
   { nombre: 'zapatos', precio: 80, disponible: true },
   { nombre: 'gorra', precio: 30, disponible: true },
   { nombre: 'reloj', precio: 200, disponible: false }
-]
+];
 
-const productosDisponibles = []
+const productosDisponibles = [];
 /*
 for(let i = 0; i < productos.length; i++){
     const producto = productos[i]
@@ -43,11 +43,11 @@ console.log(`Productos disponibles a buen preio: ${productosDisponibles}`); */
 
 productos.forEach((producto) => {
   if (producto.disponible & producto.precio <= 100) {
-    console.log(`Producto disponible: ${producto.nombre} - Precio: ${producto.precio}`)
-    productosDisponibles.push(producto.nombre)
+    console.log(`Producto disponible: ${producto.nombre} - Precio: ${producto.precio}`);
+    productosDisponibles.push(producto.nombre);
   } else if (!producto.disponible) {
-    console.log(`Producto no disponible: ${producto.nombre}`)
+    console.log(`Producto no disponible: ${producto.nombre}`);
   }
-})
+});
 
-console.log(`Productos disponibles a buen preio: ${productosDisponibles}`)
+console.log(`Productos disponibles a buen preio: ${productosDisponibles}`);

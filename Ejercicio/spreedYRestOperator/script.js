@@ -17,29 +17,29 @@ Crear un nuevo array con nombre y precioFinal (precio * 0.9).
 
 Muestra el nuevo array usando console.log.
 */
-const productoExtra1 = { nombre: 'Cargador', precio: 80 }
-const productoExtra2 = { nombre: 'USB', precio: 40 }
+const productoExtra1 = { nombre: 'Cargador', precio: 80 };
+const productoExtra2 = { nombre: 'USB', precio: 40 };
 
 const procesarProductos = (...productos) => {
-  const productosFinales = [...productos, productoExtra1, productoExtra2]
+  const productosFinales = [...productos, productoExtra1, productoExtra2];
   const nuevoArray = productosFinales.map(({ nombre, precio }) => {
     return {
       nombre,
       precio: precio * 0.9
-    }
-  })
+    };
+  });
 
   nuevoArray.forEach(({ nombre, precio }) => {
-    console.log(`Nombre: ${nombre} - Precio: ${precio}`)
-  })
-}
+    console.log(`Nombre: ${nombre} - Precio: ${precio}`);
+  });
+};
 
 procesarProductos(
   { nombre: 'Laptop', precio: 1500 },
   { nombre: 'Audifonos', precio: 200 }
-)
+);
 
-console.log('--------------Segundo  Ejercicio-------------------')
+console.log('--------------Segundo  Ejercicio-------------------');
 
 /*
 🎯 Objetivo:
@@ -65,29 +65,29 @@ const productos = [
   { nombre: 'Monitor', precio: 300, disponible: false },
   { nombre: 'USB', precio: 40, disponible: true },
   { nombre: 'Audífonos', precio: 90, disponible: true }
-]
+];
 
-const extra1 = { nombre: 'Webcam', precio: 80, disponible: true }
-const extra2 = { nombre: 'Router', precio: 150, disponible: false }
+const extra1 = { nombre: 'Webcam', precio: 80, disponible: true };
+const extra2 = { nombre: 'Router', precio: 150, disponible: false };
 
 const procesarTienda = (...productos) => {
-  const unirProductos = [...productos, extra1, extra2]
-  const filtrarProductos = unirProductos.filter(({ disponible, precio }) => disponible && precio < 100)
+  const unirProductos = [...productos, extra1, extra2];
+  const filtrarProductos = unirProductos.filter(({ disponible, precio }) => disponible && precio < 100);
   const aplicarDescuento = filtrarProductos.map(({ nombre, precio }) => {
     return {
       nombre,
       precio: precio * 0.9
-    }
-  })
+    };
+  });
 
   aplicarDescuento.forEach(({ nombre, precio }) => {
-    console.log(`Producto: ${nombre} - Precio: ${precio}`)
-  })
-}
+    console.log(`Producto: ${nombre} - Precio: ${precio}`);
+  });
+};
 
-procesarTienda(...productos)
+procesarTienda(...productos);
 
-console.log('--------Ejercicio Medio-------')
+console.log('--------Ejercicio Medio-------');
 
 /*
 🛒 Ejercicio propuesto: Carrito de Compras con Descuento y Stock
@@ -127,31 +127,31 @@ const stock = [
   { nombre: 'Monitor', precio: 300, disponible: false },
   { nombre: 'USB', precio: 40, disponible: true },
   { nombre: 'Audífonos', precio: 90, disponible: true }
-]
+];
 
-const extra3 = { nombre: 'Cámara', precio: 80, disponible: true }
-const extra4 = { nombre: 'Impresora', precio: 200, disponible: true }
+const extra3 = { nombre: 'Cámara', precio: 80, disponible: true };
+const extra4 = { nombre: 'Impresora', precio: 200, disponible: true };
 
-const seleccionUsuario = ['Mouse', 'USB', 'Monitor', 'Impresora']
+const seleccionUsuario = ['Mouse', 'USB', 'Monitor', 'Impresora'];
 
 const procesarCarrito = (...productos) => {
-  const unirProductos = [...productos, extra3, extra4]
+  const unirProductos = [...productos, extra3, extra4];
   const productosSeleccionados = unirProductos.filter(({ disponible, nombre }) =>
     seleccionUsuario.includes(nombre) && disponible
-  )
+  );
 
   const productosConDescuento = productosSeleccionados.map(({ nombre, precio }) => {
-    const descuento = (precio < 100) ? 0.9 : 0.95
+    const descuento = (precio < 100) ? 0.9 : 0.95;
     return {
       nombre,
       precioOriginal: precio,
       precioConDescuento: +(precio * descuento).toFixed(2)
-    }
-  })
+    };
+  });
 
   productosConDescuento.forEach(({ nombre, precioOriginal, precioConDescuento }) => {
-    console.log(`Producto: ${nombre} | Original: ${precioOriginal}| Descuento: ${precioConDescuento}`)
-  })
-}
+    console.log(`Producto: ${nombre} | Original: ${precioOriginal}| Descuento: ${precioConDescuento}`);
+  });
+};
 
-procesarCarrito(...stock)
+procesarCarrito(...stock);
