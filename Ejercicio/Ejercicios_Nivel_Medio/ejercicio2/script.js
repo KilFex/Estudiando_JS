@@ -1,3 +1,23 @@
+/* Ejercicio: Procesamiento de Carrito de Compras
+Tienes un inventario con varios productos. El usuario selecciona algunos productos por nombre.
+
+Paso a paso (objetivo del ejercicio):
+Unir el inventario principal con dos productos adicionales usando el spread operator.
+
+Filtrar solo los productos disponibles y que el usuario haya seleccionado.
+
+Aplicar los siguientes descuentos:
+
+Menos de 100: 10%
+Entre 100 y 200: 5%
+Más de 200: sin descuento
+Mostrar en consola:
+Nombre del producto
+Precio original
+Precio con descuento
+Categoría: "Barato" si < 80, "Regular" si entre 80 y 150, "Caro" si > 150
+Calcular y mostrar el total a pagar usando .reduce().
+ */
 const inventario = [
   { nombre: 'Mouse', precio: 50, disponible: true },
   { nombre: 'Teclado', precio: 120, disponible: true },
@@ -11,13 +31,15 @@ const extra2 = { nombre: 'Impresora', precio: 200, disponible: true };
 
 const seleccionUsuario = ['Mouse', 'USB', 'Impresora', 'Monitor'];
 
+seleccionUsuario.push('Audífonos');
+
 const consultaInventario = (...productos) => {
   const unirInventario = [...productos, extra1, extra2];
   const fitrarConsulta = unirInventario.filter(({
     disponible, nombre
   }) => disponible && seleccionUsuario.includes(nombre));
   const aplicarDescuento = fitrarConsulta.map(({ nombre, precio }) => {
-    let descuento = 0;
+    let descuento = 1;
 
     if (precio < 100) {
       descuento = 0.90;
