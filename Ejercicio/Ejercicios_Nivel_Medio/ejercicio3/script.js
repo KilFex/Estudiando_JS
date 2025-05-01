@@ -36,30 +36,26 @@ const productosSeleccionados = (...productos) => {
 
   const barato = 80;
   const caro = 150;
- 
-  const productosOrdenados = aplicarDescuento.sort((a,b) => a.final - b.final);
+
+  const productosOrdenados = aplicarDescuento.sort((a, b) => a.final - b.final);
 
   productosOrdenados.forEach(({ nombre, original, final }) => {
     const descuento = original - final;
     let categoria = '';
-    
+
     if (final < barato) {
       categoria = '[Barato]';
-      
     } else if (final >= barato && final <= caro) {
       categoria = '[Regular]';
-      
     } else {
       categoria = '[Caro]';
-     
     }
 
     console.log(
         `${categoria}  Nombre: ${nombre} |Precio Original: ${original} | Descuento: ${descuento} | Precio Final: ${final}`
     );
-    
   });
-  
+
   const subTotal = aplicarDescuento.reduce((total, { final }) =>
     total + final, 0
   );
