@@ -101,7 +101,7 @@ bonificacion.forEach(({nombre, notaFinal})=>{{
         console.log(`❌${nombre} ha reprobado con una nota de ${notaFinal}`)
     }
 }})
-*/
+*//*
 const productos = [
   { nombre: "Laptop", precio: 1500 },
   { nombre: "Mouse", precio: 50 },
@@ -118,9 +118,62 @@ const nuevoArray = productos.map(({nombre, precio})=>{
 nuevoArray.forEach(({nombre, precio})=>{
     console.log(`Producto: ${nombre} | Precio: ${precio}`)
 })*/
-
+/*
 const precioDescuento = productos.forEach(({nombre, precio})=>{
     const descuento = precio * 0.9
 
     console.log(`Producto: ${nombre} | Precio: ${descuento}`)
 })
+*/
+
+// Usando solo .map, crea un nuevo array con todos los nombres en mayúsculas.
+/*
+const nombres = ["ana", "luis", "marta", "pedro"];
+
+const nombresMayuscula = nombres.map(nom => nom.toUpperCase())
+
+console.log(nombresMayuscula)
+*/
+//Usando .map, devuelve un nuevo array donde cada 
+// empleado tenga un nuevo sueldo aumentado en un 20%.
+/*
+const empleados = [
+  { nombre: "Carlos", sueldo: 1200 },
+  { nombre: "Laura", sueldo: 1500 },
+  { nombre: "Pedro", sueldo: 1000 }
+];
+
+const nuevoSueldo = empleados.map(({nombre, sueldo})=>{
+    return{
+        nombre: nombre.toUpperCase(),
+        sueldoAumentado: (sueldo * 0.20) + sueldo
+    }
+})
+
+console.log(nuevoSueldo)
+*/
+/*
+Tarea:
+Usando .map, crea un nuevo array que contenga objetos con:
+
+nombre (igual)
+
+total (precio * cantidad)
+*/
+const productos = [
+  { nombre: "Camisa", precio: 30, cantidad: 2 },
+  { nombre: "Pantalón", precio: 50, cantidad: 1 },
+  { nombre: "Zapatos", precio: 80, cantidad: 3 }
+];
+
+const nuevoArray = productos.map(({nombre, precio, cantidad}) =>{
+     return{
+    nombre,
+    precio,
+    cantidad,
+    total: (precio* cantidad)
+    }
+})
+
+console.log(nuevoArray)
+
