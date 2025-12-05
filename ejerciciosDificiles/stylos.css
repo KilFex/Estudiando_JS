@@ -1,0 +1,101 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #007bff;
+}
+
+.formulario {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#inputNombre {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+#btnAgregar {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#btnAgregar:hover {
+    background-color: #1e7e34;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #eee;
+    margin: 20px 0;
+}
+
+#listaNombres {
+    list-style: none;
+    padding: 0;
+}
+
+#listaNombres li {
+    background-color: #e9ecef;
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lista-vacia {
+    text-align: center;
+    color: #6c757d;
+}
+
+/* Estilos para los botones CRUD */
+.btn-crud {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 5px;
+    padding: 5px 8px;
+    border-radius: 3px;
+    transition: background-color 0.2s;
+}
+
+.btn-editar {
+    color: #007bff;
+    border: 1px solid #007bff;
+}
+
+.btn-eliminar {
+    color: #dc3545;
+    border: 1px solid #dc3545;
+}
+
+.btn-editar:hover { background-color: #e7f4ff; }
+.btn-eliminar:hover { background-color: #ffe8ec; }

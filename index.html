@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./styles.css">
 </head>
-<body>
+<body class="light">
     
     <!--<h1 id="titulo">Hola Mundo</h1>
 
@@ -14,7 +15,7 @@
 
     <li class="item">A</li>
     <li class="item">B</li>
-    <li class="item">C</li>-->
+    <li class="item">C</li>
 
     <h1 id="titulo">Hola, bienvenido 👋</h1>
 
@@ -27,11 +28,49 @@
     <button id="btnFondo">Cambiar Fondo</button>
     <button id="btnToggle">Mostrar/Ocultar</button>
 
+
+
     <style>
         .oculto{
             display: none;
         }
     </style>
+
+    <button id="btnTheme">Cambiar Tema</button>
+
+    <h1>Bienvenido</h1>
+    <p>Esto es un texto de prueba para ver los colores.</p>-->
+
+    <style>
+        body.light {
+            background: white;
+            color: black;
+        }
+
+        body.dark {
+            background: #222;
+            color: white;
+    }
+    </style>
+
+    <div class="container">
+    <h1>Gestor de Usuarios</h1>
+
+    <div class="btns">
+        <button id="btnTodos">Mostrar Todos</button>
+        <button id="btnPremium">Filtrar Premium</button>
+        <button id="btnNombres">Solo Nombres</button>
+        <button id="btnTheme">Cambiar tema</button>
+    </div>
+
+    <ul id="listaUsuarios"></ul>
+</div>
+
+
+    <ul id="listaTareas"></ul>
+</body>
+
+
 
 
 
